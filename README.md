@@ -140,6 +140,26 @@ Este projeto está configurado para ser implantado no **Azure App Service**. Par
 
 4. **Configure o banco de dados** Azure SQL se necessário
 
+### 🗑️ Como Deletar a Aplicação
+
+Para remover completamente a aplicação e todos os recursos associados:
+
+```bash
+az group delete -n resource-group-west
+```
+
+**⚠️ Atenção:** Este comando irá deletar **TODOS** os recursos dentro do grupo de recursos, incluindo:
+- App Service
+- Plano de hospedagem
+- Banco de dados (se configurado)
+- Storage accounts
+- Outros recursos Azure
+
+**Alternativa mais segura:** Se quiser deletar apenas o App Service específico:
+```bash
+az webapp delete --name hello-world1234 --resource-group resource-group-west
+```
+
 ## 🔧 Configuração
 
 ### Variáveis de Ambiente
